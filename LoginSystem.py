@@ -8,22 +8,16 @@ def have_account():
 def signup():
     new_username = input("Please enter your new username: ")
     new_password = input("Please enter your new password: ")
-    while True:
-        with open("username.txt", "a") as new_u:
-            new_u.write(new_username)
-            new_u.write("\n")
-        with open("password.txt", "a") as new_p:
-            new_p.write(new_password)
-            new_p.write("\n")
-        with open("username.txt", "r") as new_uu:
-            u = new_uu.read()
-        with open("password.txt", "r") as new_pp:
-            p = new_pp.read()
-        if new_username not in u or new_password not in p:
-            break
-        else:
-            print("Username or password already taken")
-            continue
+    with open("username.txt", "a") as new_u:
+        new_u.write(new_username)
+        new_u.write("\n")
+    with open("password.txt", "a") as new_p:
+        new_p.write(new_password)
+        new_p.write("\n")
+    with open("username.txt", "r") as new_uu:
+        u = new_uu.read()
+    with open("password.txt", "r") as new_pp:
+        p = new_pp.read()
 
 
 """
